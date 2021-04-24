@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5030b3164b87f264692711b9edf13bfa, type: 3}
-  m_Name: ProjectileTest
+  m_Name: Pellet
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 5c0ab363bf4d11d4b96caf2e1e395b43, type: 3}
-  color: {r: 1, g: 0.7466958, b: 0, a: 1}
+  sprite: {fileID: 21300000, guid: f66d387162999484cb9085a1260f1c62, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
   collisionRadius: 0.05
   velocity: 20
   layer: 9
