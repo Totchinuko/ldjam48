@@ -34,7 +34,7 @@ namespace Constantine
                 return;
             }
 
-            machine.body.velocity = Vector2.right * machine.move * speed;
+            machine.body.velocity = machine.beingHit ? Vector2.zero : Vector2.right * machine.move * speed;
         }
 
         public static bool IsGrounded(Vector2 position, PawnGroundedDefinition def) {

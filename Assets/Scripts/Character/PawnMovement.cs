@@ -11,6 +11,8 @@ namespace Constantine
         public float move;
         [HideInInspector]
         public int jumpCount;
+        [HideInInspector]
+        public bool beingHit;
         public Rigidbody2D body {get; private set;}
         public CapsuleCollider2D capsule {get; private set;}
         
@@ -26,6 +28,10 @@ namespace Constantine
 
         private void Start() {
             SetState(initialState);
+        }
+
+        public void ToggleBeingHit(bool toggle) {
+            beingHit = toggle;
         }
 
         public void Move(float move) {

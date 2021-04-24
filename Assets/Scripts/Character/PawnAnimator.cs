@@ -25,6 +25,8 @@ namespace Constantine
         public Animator animator {get; private set;}
 
         public UnityEvent OnAirJumpShoot;
+        public UnityEvent OnHitStatusBegin;
+        public UnityEvent OnHitStatusEnd;
 
         public void Attack() {
             lastAttack = Time.time;
@@ -35,8 +37,8 @@ namespace Constantine
         }
 
         public void Hit() {
-            if(!animator.GetBool(airbornID))
-                animator.SetTrigger(hitID);
+            animator.SetTrigger(hitID);
+            OnHitStatusBegin.Invoke();
         }
 
         public void ToggleAirborn(bool toggle) {
@@ -67,6 +69,10 @@ namespace Constantine
 
         protected virtual void EventAirJumpShoot() {
             OnAirJumpShoot.Invoke();
+        }
+
+        protected virtual void EventHitEnded() {
+            OnHitStatusEnd.Invoke();
         }
     }
 }
