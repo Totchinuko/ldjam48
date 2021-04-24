@@ -12,6 +12,7 @@ namespace Constantine
         public override void EnterState(PawnMovement machine)
         {
             machine.jumpCount++;
+            machine.OnJump.Invoke();
         }
 
         public override void Move(PawnMovement machine, float axis)

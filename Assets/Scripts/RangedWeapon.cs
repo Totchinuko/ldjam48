@@ -20,5 +20,11 @@ namespace Constantine
             Vector3 start = startPoint.position;
             Projectile.FireProjectile(start, direction, projectile);
         }
+
+        public void FireDown() {
+            Vector3 direction = pawn.animator.down;
+            Vector3 start = startPoint.position;
+            Projectile.FireProjectile(start, direction, projectile);
+        }
     }
 }

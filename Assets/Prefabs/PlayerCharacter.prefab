@@ -212,6 +212,30 @@ MonoBehaviour:
   initialState: {fileID: 11400000, guid: d83d26accd6444f4986e35c2cd2ad3bf, type: 2}
   move: 0
   jumpCount: 0
+  OnAirJump:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 773468162908205655}
+        m_TargetAssemblyTypeName: Constantine.RangedWeapon, Assembly-CSharp
+        m_MethodName: FireDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnJump:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAirborn:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLand:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &773468162908205655
 MonoBehaviour:
   m_ObjectHideFlags: 0

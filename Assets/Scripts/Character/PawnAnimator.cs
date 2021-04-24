@@ -9,6 +9,7 @@ namespace Constantine
         protected bool fliped;
 
         public Vector2 forward => transform.right;
+        public Vector2 down => -transform.up;
 
         private void Awake() {
             pawn = GetComponentInParent<Pawn>();            

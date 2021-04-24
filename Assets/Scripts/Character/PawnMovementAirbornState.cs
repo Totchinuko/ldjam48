@@ -20,8 +20,15 @@ namespace Constantine
 
         public override void Jump(PawnMovement machine)
         {
-            if(machine.jumpCount < maxJumpCount)
+            if(machine.jumpCount < maxJumpCount) {
+                machine.OnAirJump.Invoke();
                 machine.SetState(jumpState);
+            }
+        }
+
+        public override void EnterState(PawnMovement machine)
+        {
+            machine.OnAirborn.Invoke();
         }
 
         public override void ExitState(PawnMovement machine)

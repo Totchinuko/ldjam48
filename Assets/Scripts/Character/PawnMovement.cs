@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 
 namespace Constantine
 {
@@ -12,6 +13,11 @@ namespace Constantine
         public int jumpCount;
         public Rigidbody2D body {get; private set;}
         public CapsuleCollider2D capsule {get; private set;}
+        
+        public UnityEvent OnAirJump;
+        public UnityEvent OnJump;
+        public UnityEvent OnAirborn;
+        public UnityEvent OnLand;
 
         private void Awake() {
             body = GetComponent<Rigidbody2D>();
