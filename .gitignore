@@ -7,6 +7,10 @@
 [Uu]serSettings/
 [Uu]MotionData/
 
+#Vendors
+Assets/Plugins/
+Assets/Plugins.meta
+
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # [Aa]ssets/AssetStoreTools*
