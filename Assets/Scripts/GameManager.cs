@@ -7,6 +7,7 @@ namespace Constantine
     public class GameManager : ScriptableObject
     {
         public PlayerInputController playerController;
+        public ProjectilePool projectilePool;
 
         public static GameManager Instance {get; private set;}
         
@@ -15,6 +16,7 @@ namespace Constantine
                 throw new Exception("Only one controller authorized");
             Instance = this;
             playerController.Init();
+            projectilePool.Init();
         }
     }
 }

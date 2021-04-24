@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Spawn
+  - Wall
+  - HurtBox
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -11,10 +15,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Walls
+  - Player
+  - PlayerHurtbox
+  - EnemyHurtbox
   - 
   - 
   - 
