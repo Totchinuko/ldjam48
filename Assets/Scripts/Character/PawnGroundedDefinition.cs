@@ -8,5 +8,6 @@ namespace Constantine
     {
         public LayerMask groundMask;
         public float minDistanceToBeGrounded;
+        public float radius;
     }
 }

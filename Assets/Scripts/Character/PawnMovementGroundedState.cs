@@ -29,7 +29,7 @@ namespace Constantine
         {
             if(!IsGrounded(machine.transform.position, groundedDefinition)) {
                 machine.SetState(airbornState);
-                //machine.jumpCount = 1;
+                machine.jumpCount = 1;
                 return;
             }
 
@@ -37,7 +37,7 @@ namespace Constantine
         }
 
         public static bool IsGrounded(Vector2 position, PawnGroundedDefinition def) {
-            RaycastHit2D hit = Physics2D.Raycast(position, Vector2.down, Mathf.Infinity, def.groundMask);
+            RaycastHit2D hit = Physics2D.CircleCast(position + Vector2.up * def.radius, def.radius, Vector2.down, Mathf.Infinity, def.groundMask);
             if(hit.collider == null)
                 Debug.LogWarning("No ground under the player feet");
             return hit.collider != null && hit.distance <= def.minDistanceToBeGrounded;
