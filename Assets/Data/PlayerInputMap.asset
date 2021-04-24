@@ -30,7 +30,7 @@ MonoBehaviour:
       m_Flags: 4
     - m_Name: negative
       m_Id: a3e0df51-e8e4-48c2-aade-52697734ee0f
-      m_Path: 
+      m_Path: <Keyboard>/a
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -38,12 +38,20 @@ MonoBehaviour:
       m_Flags: 8
     - m_Name: positive
       m_Id: b8f6f16e-1846-44fc-8496-5e4063856444
-      m_Path: 
+      m_Path: <Keyboard>/d
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Move
       m_Flags: 8
+    - m_Name: 
+      m_Id: 0e4b1ff0-c9c3-483a-82d9-9b500de3d484
+      m_Path: <Gamepad>/dpad/x
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 0
   jump:
     m_Name: Jump
     m_Type: 0
@@ -51,12 +59,44 @@ MonoBehaviour:
     m_Id: 05a31218-1af1-404a-9d45-691572e0c765
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
-  shoot:
-    m_Name: Shoot
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 176fd1c6-6200-4f3e-bec3-085551c1f107
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump
+      m_Flags: 0
+    - m_Name: 
+      m_Id: a25964bd-5b82-48bd-bc3b-c93804910327
+      m_Path: <Gamepad>/buttonSouth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump
+      m_Flags: 0
+  attack:
+    m_Name: Attack
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: d0522c2f-e244-4e16-8114-601f1232d97e
+    m_Id: c5ac7bcf-672c-4e87-8856-3da0e31175ce
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 8f4564a1-1ad1-4a03-9490-c8560119fe23
+      m_Path: <Keyboard>/rightCtrl
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Attack
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 5cefa208-3a7d-458d-b9fc-cea0be43028b
+      m_Path: <Gamepad>/buttonWest
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Attack
+      m_Flags: 0
