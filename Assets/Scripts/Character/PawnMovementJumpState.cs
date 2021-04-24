@@ -14,6 +14,11 @@ namespace Constantine
             machine.jumpCount++;
         }
 
+        public override void Move(PawnMovement machine, float axis)
+        {
+            machine.move = axis;
+        }
+
         public override void DoFixedUpdate(PawnMovement machine)
         {
             Vector2 v = machine.body.velocity;

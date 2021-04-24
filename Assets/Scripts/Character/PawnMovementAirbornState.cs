@@ -9,6 +9,8 @@ namespace Constantine
         public PawnGroundedDefinition groundedDefinition;
         public int maxJumpCount;
         public float speed;
+        public float gravityScaleClimb;
+        public float gravityScaleFall;
         public PawnMovementState jumpState;
         public PawnMovementState groundedState;
         public override void Move(PawnMovement machine, float axis)
@@ -22,6 +24,11 @@ namespace Constantine
                 machine.SetState(jumpState);
         }
 
+        public override void ExitState(PawnMovement machine)
+        {
+            machine.body.gravityScale = 1f;
+        }
+
         public override void DoFixedUpdate(PawnMovement machine)
         {
             Vector2 v = machine.body.velocity;  
@@ -31,6 +38,7 @@ namespace Constantine
                 return;
             }          
 
+            machine.body.gravityScale = v.y < 0 ? gravityScaleFall : gravityScaleClimb;
             v.x = machine.move * speed;
             machine.body.velocity = v;
         }

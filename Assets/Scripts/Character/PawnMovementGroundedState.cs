@@ -29,11 +29,11 @@ namespace Constantine
         {
             if(!IsGrounded(machine.transform.position, groundedDefinition)) {
                 machine.SetState(airbornState);
-                machine.jumpCount = 1;
+                //machine.jumpCount = 1;
                 return;
             }
 
-            machine.body.velocity = Vector2.left * machine.move * speed;
+            machine.body.velocity = Vector2.right * machine.move * speed;
         }
 
         public static bool IsGrounded(Vector2 position, PawnGroundedDefinition def) {
