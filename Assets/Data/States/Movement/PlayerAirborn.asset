@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db1bb3bfe64ebf74e9401e9986bcf9fe, type: 3}
+  m_Name: PlayerAirborn
+  m_EditorClassIdentifier: 
+  groundedDefinition: {fileID: 11400000, guid: 0df9c080d3bf63e4fbf588d9064fbdbc, type: 2}
+  maxJumpCount: 2
+  speed: 1
+  jumpState: {fileID: 11400000, guid: c292655c90acba947a7b3c2076cc735c, type: 2}
+  groundedState: {fileID: 11400000, guid: 48016e6d84af54d46897691d7d08623a, type: 2}
