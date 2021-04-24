@@ -15,7 +15,7 @@ MonoBehaviour:
   groundedDefinition: {fileID: 11400000, guid: 0df9c080d3bf63e4fbf588d9064fbdbc, type: 2}
   maxJumpCount: 2
   speed: 8
-  gravityScaleClimb: 2
-  gravityScaleFall: 4
+  gravityScaleClimb: 4
+  gravityScaleFall: 6
   jumpState: {fileID: 11400000, guid: c292655c90acba947a7b3c2076cc735c, type: 2}
   groundedState: {fileID: 11400000, guid: 48016e6d84af54d46897691d7d08623a, type: 2}
