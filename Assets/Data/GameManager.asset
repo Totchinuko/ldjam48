@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: GameManager
   m_EditorClassIdentifier: 
   playerController: {fileID: 11400000, guid: f8657782d12af524c913b8e6b077f914, type: 2}
+  projectilePool: {fileID: 11400000, guid: 44d5452fed456f643abc2a83ddb84e48, type: 2}

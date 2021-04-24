@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 277ee1c9f47a37245af3ce7fa80deae1, type: 3}
+  m_Name: ProjectilePool
+  m_EditorClassIdentifier: 
+  basePoolCount: 50
+  refillLimit: 10
+  refillCount: 30
+  refillPerFrame: 10
+  tickPerFrame: 50
+  maxForThrow: 200
+  projectilePrefab: {fileID: 5749151717061159396, guid: 6ccd156cbe87ad04a8db91c09e5ba379, type: 3}
