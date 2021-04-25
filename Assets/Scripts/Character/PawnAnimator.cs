@@ -56,15 +56,15 @@ namespace Constantine
         }
 
         private void LateUpdate() {
-            float x = pawn.movement.body.velocity.x;
-            float y = pawn.movement.body.velocity.y;
+            float x = pawn.movement.move;            
             if(!Mathf.Approximately(x, 0)) {
                 fliped = x < 0;
             }
             transform.rotation = Quaternion.Euler(0, fliped == defaultLeft ? 0 : 180, 0);
 
+            if(animator == null) return;
             animator.SetBool(runID, !Mathf.Approximately(x, 0));
-            animator.SetFloat(verticalID, y);
+            animator.SetFloat(verticalID, pawn.movement.body.velocity.y);
         }
 
         protected virtual void EventAirJumpShoot() {

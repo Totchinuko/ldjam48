@@ -41,5 +41,9 @@ namespace Constantine
         public void Jump() {
             CurrentState?.Jump(this);
         }
+
+        public void Jump(Vector2 destination) {
+            CurrentState?.Jump(this, destination);
+        }
     }
 }

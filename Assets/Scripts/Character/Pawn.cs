@@ -24,6 +24,10 @@ namespace Constantine
             movement.Jump();
         }
 
+        public void Jump(Vector2 destination) {
+            movement.Jump(destination);
+        }
+
         public void Attack() {
             OnAttack.Invoke();
         }
