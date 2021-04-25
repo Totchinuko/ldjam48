@@ -168,7 +168,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68118141}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.61, y: -7.66, z: 0}
+  m_LocalPosition: {x: 14, y: -7.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1195938432}
@@ -686,7 +686,7 @@ Transform:
   - {fileID: 1989358558}
   - {fileID: 706389748}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &706389744
 GameObject:
@@ -855,7 +855,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 791240326}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.396, y: -7.67, z: 0}
+  m_LocalPosition: {x: -9.98, y: -7.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1195938432}
@@ -1118,6 +1118,8 @@ MonoBehaviour:
     jump: 0
   - destination: {fileID: 1827071241}
     jump: 1
+  - destination: {fileID: 1186069485}
+    jump: 1
 --- !u!4 &953147150
 Transform:
   m_ObjectHideFlags: 0
@@ -1178,22 +1180,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1118208627}
-        m_TargetAssemblyTypeName: Constantine.TestMovement, Assembly-CSharp
-        m_MethodName: StartScene
-        m_Mode: 1
+      - m_Target: {fileID: 1195938431}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1195938431}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
+      - m_Target: {fileID: 1118208627}
+        m_TargetAssemblyTypeName: Constantine.TestMovement, Assembly-CSharp
+        m_MethodName: StartScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1230,6 +1232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawn: {fileID: 1755787229}
   playerPrefab: {fileID: 9138969989911632656, guid: e6d7e6e62af75ef4cb7c36d55a3e3d15, type: 3}
+  aiTest: {fileID: 4012691549859275948}
 --- !u!1 &1186069484
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,49 +1450,6 @@ Transform:
   - {fileID: 399438425}
   - {fileID: 1714328090}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1430612152
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1430612154}
-  - component: {fileID: 1430612153}
-  m_Layer: 0
-  m_Name: FakeEnemy
-  m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1430612153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430612152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3571d2766be80574b91f2125b5fad81d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1430612154
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430612152}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.48, y: 0.48, z: -0.19727561}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1482481127
@@ -1528,7 +1488,7 @@ Transform:
   - {fileID: 1592681493}
   - {fileID: 1191623180}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1521062849
 GameObject:
@@ -1926,7 +1886,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1764454585
 GameObject:
@@ -2009,7 +1969,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1769494475
 GameObject:
@@ -2100,6 +2060,10 @@ MonoBehaviour:
   - destination: {fileID: 1642234410}
     jump: 1
   - destination: {fileID: 215230330}
+    jump: 1
+  - destination: {fileID: 525356313}
+    jump: 1
+  - destination: {fileID: 1714328091}
     jump: 1
 --- !u!4 &1817586729
 Transform:
@@ -2448,3 +2412,71 @@ Transform:
   m_Father: {fileID: 1195938432}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &4012691549859275947
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7354256472000165639, guid: 49bc6c91a9c52634a87e638640e8ef8c, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354256472000165639, guid: 49bc6c91a9c52634a87e638640e8ef8c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354256472000165639, guid: 49bc6c91a9c52634a87e638640e8ef8c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354256472000165639, guid: 49bc6c91a9c52634a87e638640e8ef8c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354256472000165639, guid: 49bc6c91a9c52634a87e638640e8ef8c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354256472000165639, guid: 49bc6c91a9c52634a87e638640e8ef8c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354256472000165639, guid: 49bc6c91a9c52634a87e638640e8ef8c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354256472000165639, guid: 49bc6c91a9c52634a87e638640e8ef8c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354256472000165639, guid: 49bc6c91a9c52634a87e638640e8ef8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354256472000165639, guid: 49bc6c91a9c52634a87e638640e8ef8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354256472000165639, guid: 49bc6c91a9c52634a87e638640e8ef8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354256472000165658, guid: 49bc6c91a9c52634a87e638640e8ef8c, type: 3}
+      propertyPath: m_Name
+      value: EnemyTestCharacter
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 49bc6c91a9c52634a87e638640e8ef8c, type: 3}
+--- !u!114 &4012691549859275948 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2431032995933055729, guid: 49bc6c91a9c52634a87e638640e8ef8c, type: 3}
+  m_PrefabInstance: {fileID: 4012691549859275947}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050a617cb37a0084eb708e7fc44aa9d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
