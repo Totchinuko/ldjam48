@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - HurtBox
   - Projectile
+  - LevelPoint
   layers:
   - Default
   - TransparentFX

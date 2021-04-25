@@ -40,4 +40,6 @@ public class DoorAnimation : MonoBehaviour
     }
 
     private float _originPosition = 0;
+
+    public bool IsOpen { get => _isOpen; set => _isOpen = value; }
 }
