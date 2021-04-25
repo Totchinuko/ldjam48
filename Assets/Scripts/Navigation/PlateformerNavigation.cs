@@ -12,6 +12,14 @@ namespace Constantine
             points = GetComponentsInChildren<NavigationPoint>();
         }
 
+        private void Start() {
+            GameManager.Instance.navigation = this;
+        }
+
+        private void OnDestroy() {
+            GameManager.Instance.navigation = null;
+        }
+
         public NavigationPoint GetClosestPoint(Vector3 position) {
             float sdist = Mathf.Infinity;
             NavigationPoint selected = null;
@@ -24,10 +32,14 @@ namespace Constantine
             }
             return selected;
         }
-
-        public Stack<NavigationPoint> GetPath(Vector3 start, Vector3 goal) {
+        
+        public Stack<NavigationPoint> GetPath(Vector3 start, Vector3 goal)  {
             NavigationPoint begin = GetClosestPoint(start);
             NavigationPoint end = GetClosestPoint(goal);
+            return GetPath(begin, end);
+        }
+
+        public Stack<NavigationPoint> GetPath(NavigationPoint begin, NavigationPoint end) {
 
             Stack<NavigationPoint> path = new Stack<NavigationPoint>();
             Queue<NavigationPoint> openList = new Queue<NavigationPoint>();
@@ -57,7 +69,7 @@ namespace Constantine
                 path.Push(final);
                 final = final.parent;
             } while(final != begin && final != null);
-            
+
             return path;
         }
     }
