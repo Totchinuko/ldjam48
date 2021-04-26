@@ -447,6 +447,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: eca6345b477af894b8c32dbc884177b1, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayerSO, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: d2d4bf921350b5f4a8141c5bf475ba2d, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!210 &1757911158844813624
 SortingGroup:
   m_ObjectHideFlags: 0

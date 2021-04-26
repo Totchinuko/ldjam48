@@ -49,7 +49,7 @@ namespace Constantine
 
         public void ReleasePawn(PawnAI pawn) {
             availablePawns[pawn.type].Push(pawn);
-            pawn.gameObject.SetActive(false);
+            pawn.gameObject.SetActive(true);
         }
 
         private void SpawnOne(int type) {
