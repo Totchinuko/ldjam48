@@ -97,32 +97,32 @@ namespace Constantine
             OnMove.Invoke(move);
         }
 
-        private void OnDrawGizmos() {
-            if(!Application.isPlaying) return;
-            if(PlayerInputController.Instance.Pawn == null || target == null) return;
+        // private void OnDrawGizmos() {
+        //     if(!Application.isPlaying) return;
+        //     if(PlayerInputController.Instance.Pawn == null || target == null) return;
 
-            Vector3 ptarget = target.transform.position;
-            Vector3 pos = transform.position;
+        //     Vector3 ptarget = target.transform.position;
+        //     Vector3 pos = transform.position;
 
-            Gizmos.DrawCube(localPoint.position, Vector3.one * 0.2f);
+        //     Gizmos.DrawCube(localPoint.position, Vector3.one * 0.2f);
 
-            if(this.path == null || this.path.Count == 0) {
-                Gizmos.DrawLine(ptarget, targetPoint.position);
-                Gizmos.DrawLine(pos, nextPoint.position);
-                return;
-            }
-            NavigationPoint[] path = this.path.ToArray();
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(ptarget, targetPoint.position);
-            Gizmos.DrawLine(pos, path[0].position);
-            Gizmos.DrawCube(path[0].position, Vector3.one * 0.2f);
-            if(path.Length == 1) return;
-            for (int i = 1; i < path.Length; i++)
-            {
-                Gizmos.DrawCube(path[i].position, Vector3.one * 0.2f);
-                Gizmos.DrawLine(path[i-1].position, path[i].position);
-            }
-        }
+        //     if(this.path == null || this.path.Count == 0) {
+        //         Gizmos.DrawLine(ptarget, targetPoint.position);
+        //         Gizmos.DrawLine(pos, nextPoint.position);
+        //         return;
+        //     }
+        //     NavigationPoint[] path = this.path.ToArray();
+        //     Gizmos.color = Color.red;
+        //     Gizmos.DrawLine(ptarget, targetPoint.position);
+        //     Gizmos.DrawLine(pos, path[0].position);
+        //     Gizmos.DrawCube(path[0].position, Vector3.one * 0.2f);
+        //     if(path.Length == 1) return;
+        //     for (int i = 1; i < path.Length; i++)
+        //     {
+        //         Gizmos.DrawCube(path[i].position, Vector3.one * 0.2f);
+        //         Gizmos.DrawLine(path[i-1].position, path[i].position);
+        //     }
+        // }
 
     }
 }
