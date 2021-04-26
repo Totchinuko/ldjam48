@@ -538,7 +538,6 @@ GameObject:
   - component: {fileID: 4638998618251995528}
   - component: {fileID: 4638998618251995531}
   - component: {fileID: 4638998618251995530}
-  - component: {fileID: 4638998618251995525}
   - component: {fileID: 4638998618251995524}
   m_Layer: 10
   m_Name: Imp
@@ -659,19 +658,7 @@ MonoBehaviour:
   centerOfMass: {fileID: 1857831977446594477}
   OnAttack:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4638998618251995525}
-        m_TargetAssemblyTypeName: Constantine.RangedWeapon, Assembly-CSharp
-        m_MethodName: Fire
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &4638998618251995531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -684,7 +671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 338106038a9e66543bc34eb2a7792867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialState: {fileID: 11400000, guid: e7d82535d65de644e99e80b21a14d961, type: 2}
+  initialState: {fileID: 11400000, guid: 59f4e449775c253438a9490d004f777d, type: 2}
   move: 0
   jumpCount: 0
   beingHit: 0
@@ -693,11 +680,29 @@ MonoBehaviour:
       m_Calls: []
   OnJump:
     m_PersistentCalls:
+      m_Calls: []
+  OnAirborn:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4638998618251995531}
-        m_TargetAssemblyTypeName: Constantine.PawnMovement, Assembly-CSharp
-        m_MethodName: Jump
-        m_Mode: 1
+      - m_Target: {fileID: 4691663529393727790}
+        m_TargetAssemblyTypeName: Constantine.PawnAnimator, Assembly-CSharp
+        m_MethodName: ToggleAirborn
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  OnLand:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4691663529393727790}
+        m_TargetAssemblyTypeName: Constantine.PawnAnimator, Assembly-CSharp
+        m_MethodName: ToggleAirborn
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -706,12 +711,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnAirborn:
-    m_PersistentCalls:
-      m_Calls: []
-  OnLand:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &4638998618251995530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -724,37 +723,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b74e9331d0adf408c6e0d4944f10bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialState: {fileID: 11400000, guid: 162928cd5676c204cb520e8487946c8c, type: 2}
+  initialState: {fileID: 11400000, guid: 70ac84292d708e54d8bdcada320ee190, type: 2}
   firePoint: {fileID: 4638998617986302359}
---- !u!114 &4638998618251995525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4638998618251995527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50c2e9c04822e844a934b10546ded85c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startPoint: {fileID: 4638998617986302359}
-  projectile: {fileID: 11400000, guid: c9dbcd11e96e74b45a65770818e1394f, type: 2}
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4638998618251995530}
-        m_TargetAssemblyTypeName: Constantine.PawnBehaviour, Assembly-CSharp
-        m_MethodName: OnAttackDone
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!210 &4638998618251995524
 SortingGroup:
   m_ObjectHideFlags: 0
