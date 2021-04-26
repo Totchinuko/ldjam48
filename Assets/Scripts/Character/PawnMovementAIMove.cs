@@ -10,6 +10,11 @@ namespace Constantine
         public float speed;
         public PawnMovementState jumpState;
 
+        public override void EnterState(PawnMovement machine)
+        {
+            machine.OnLand.Invoke();
+        }
+
         public override void Move(PawnMovement machine, float axis)
         {
             machine.move = axis;
@@ -23,10 +28,9 @@ namespace Constantine
 
         public override void DoFixedUpdate(PawnMovement machine)
         {
-
             Vector3 v = machine.body.velocity;
             v.x = machine.beingHit ? 0f : machine.move * speed;
-            machine.body.velocity = v;
+            machine.body.velocity = v; 
         }
     }
 }

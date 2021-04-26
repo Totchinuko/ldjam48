@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6653331836575084096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 669603903695106405}
+  m_Layer: 0
+  m_Name: Firepoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &669603903695106405
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6653331836575084096}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.78, y: 0.52, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7354256470857364869}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7049228233012263739
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +142,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8507864164796191855}
+  - {fileID: 669603903695106405}
   m_Father: {fileID: 7354256472000165639}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -202,6 +233,8 @@ GameObject:
   - component: {fileID: 2431032995933055729}
   - component: {fileID: 7354256472000165636}
   - component: {fileID: 7354256472000165659}
+  - component: {fileID: 648543961}
+  - component: {fileID: 6031775633005944672}
   m_Layer: 10
   m_Name: EnemyTestCharacter
   m_TagString: Untagged
@@ -239,7 +272,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1
+  m_GravityScale: 6
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -273,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050a617cb37a0084eb708e7fc44aa9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canJump: 1
+  canJump: 0
   stoppingDistance: 0.5
   nextDistance: 0.1
   OnJump:
@@ -318,9 +351,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72cca28a44221f4d94a4a7323696367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  centerOfMass: {fileID: 8507864164796191855}
   OnAttack:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6031775633005944672}
+        m_TargetAssemblyTypeName: Constantine.RangedWeapon, Assembly-CSharp
+        m_MethodName: Fire
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7354256472000165659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,3 +395,46 @@ MonoBehaviour:
   OnLand:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &648543961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354256472000165658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b74e9331d0adf408c6e0d4944f10bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialState: {fileID: 11400000, guid: 162928cd5676c204cb520e8487946c8c, type: 2}
+  firePoint: {fileID: 669603903695106405}
+--- !u!114 &6031775633005944672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354256472000165658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c2e9c04822e844a934b10546ded85c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPoint: {fileID: 669603903695106405}
+  projectile: {fileID: 11400000, guid: c9dbcd11e96e74b45a65770818e1394f, type: 2}
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 648543961}
+        m_TargetAssemblyTypeName: Constantine.PawnBehaviour, Assembly-CSharp
+        m_MethodName: OnAttackDone
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

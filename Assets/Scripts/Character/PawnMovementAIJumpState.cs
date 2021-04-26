@@ -16,6 +16,7 @@ namespace Constantine
         {
             PawnAI ai = machine.GetComponent<PawnAI>();
             ai.paused = true;
+            machine.OnAirborn.Invoke();
         }
 
         public override void Move(PawnMovement machine, float axis)
