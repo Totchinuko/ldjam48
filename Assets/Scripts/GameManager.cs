@@ -8,6 +8,8 @@ namespace Constantine
     {
         public PlayerInputController playerController;
         public ProjectilePool projectilePool;
+        [NonSerialized]
+        public PlateformerNavigation navigation;
 
         public static GameManager Instance {get; private set;}
         

@@ -161,12 +161,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72cca28a44221f4d94a4a7323696367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  centerOfMass: {fileID: 4393878993136944294}
   OnAttack:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3275191819860855682}
         m_TargetAssemblyTypeName: Constantine.RangedWeapon, Assembly-CSharp
         m_MethodName: Fire
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7609157964167229059}
+        m_TargetAssemblyTypeName: Constantine.PawnAnimator, Assembly-CSharp
+        m_MethodName: Attack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -254,6 +267,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 6488513488834232162}
   projectile: {fileID: 11400000, guid: a5f35f3157c3782469b0ba20f6230fe4, type: 2}
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4393878992964909391
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,13 +583,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultLeft: 1
+  lowerGunCooldown: 0.5
   OnAirJumpShoot:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3275191819860855682}
         m_TargetAssemblyTypeName: Constantine.RangedWeapon, Assembly-CSharp
-        m_MethodName: FireDown
-        m_Mode: 1
+        m_MethodName: Fire
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -6,6 +6,8 @@ namespace Constantine
 {
     public class PawnMovement : StateMachineMB<PawnMovement, PawnMovementState>
     {
+        [NonSerialized]
+        public bool paused;
         public PawnMovementState initialState;
         [HideInInspector]
         public float move;
@@ -35,11 +37,16 @@ namespace Constantine
         }
 
         public void Move(float move) {
-            CurrentState?.Move(this, move);
+            if(!paused)
+                CurrentState?.Move(this, move);
         }
 
         public void Jump() {
             CurrentState?.Jump(this);
+        }
+
+        public void Jump(Vector2 destination) {
+            CurrentState?.Jump(this, destination);
         }
     }
 }
