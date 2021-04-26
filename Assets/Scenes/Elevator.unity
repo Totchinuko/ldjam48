@@ -434,8 +434,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotateTime: 0.5
-  _rotation: {x: 0, y: 0, z: -30}
+  _rotation: {x: 0, y: 0, z: -180}
   _rotateMode: 3
+  _ease: 1
   _elevator: {fileID: 748998531}
   _startPully: 1
 --- !u!1 &460697557
@@ -791,7 +792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcf46a0a9f6057d499068d88d6510467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isGoingDown: 0
+  _isGoingDown: 1
 --- !u!1 &757126722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,8 +1135,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotateTime: 0.5
-  _rotation: {x: 0, y: 0, z: 30}
+  _rotation: {x: 0, y: 0, z: 180}
   _rotateMode: 3
+  _ease: 1
   _elevator: {fileID: 748998531}
   _startPully: 1
 --- !u!1 &965663299
