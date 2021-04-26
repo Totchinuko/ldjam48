@@ -13,7 +13,7 @@ namespace Constantine
         public float stoppingDistance;
         public float nextDistance;
         public NavigationPoint targetPoint {get; private set;}
-        public Transform target {get; private set;}
+        public Pawn target {get; private set;}
         public NavigationPoint nextPoint {get; private set;}
         public NavigationPoint previousPoint {get; private set;}
         public NavigationPoint localPoint {get; private set;}
@@ -25,19 +25,26 @@ namespace Constantine
         public UnityEvent<float> OnMove;
 
 
-        public void SetTarget(Transform transform) {
-            target = transform;
+        public void SetTarget(Pawn target) {
+            this.target = target;
             if(nav == null) return;
             localPoint = nav.GetClosestPoint(this.transform.position);
-            targetPoint = nav.GetClosestPoint(target.position);
+            if(canJump)
+                targetPoint = nav.GetClosestPoint(this.target.transform.position);
+            else
+                targetPoint = nav.GetClosestWithoutJump(localPoint, this.target.transform.position);
             if(targetPoint == localPoint) {
                 path.Clear();
                 path.Push(targetPoint);
             }
-            else
-                path = nav.GetPath(localPoint, targetPoint);
-            nextPoint = path.Pop();
-            previousPoint = localPoint;
+            else if(nav.GetPath(localPoint, targetPoint, path)) {
+                nextPoint = path.Pop();
+                previousPoint = localPoint;
+            }
+            else {
+                nextPoint = localPoint;
+                previousPoint = localPoint;
+            }
         }
 
         public void Jump(Vector3 destination) {
@@ -55,18 +62,18 @@ namespace Constantine
             }
 
             localPoint = nav.GetClosestPoint(transform.position);
-            NavigationPoint tp = nav.GetClosestPoint(target.position);
+            NavigationPoint tp = nav.GetClosestPoint(target.transform.position);
             if(tp != targetPoint || nextPoint == null || (previousPoint != localPoint && nextPoint != localPoint)) {
                 SetTarget(target);
             }
 
-            float tdist = (transform.position - target.position).sqrMagnitude;
+            float tdist = (transform.position - target.transform.position).sqrMagnitude;
             float ndist = (transform.position - nextPoint.position).sqrMagnitude;
             float ldist = (transform.position - localPoint.position).sqrMagnitude;
 
             float move = 0f;
             if(tdist < ndist && tdist > stoppingDistance * stoppingDistance) {
-                move = Mathf.Sign((target.position - transform.position).x);
+                move = Mathf.Sign((target.transform.position - transform.position).x);
             }
             else if(tdist >= ndist && ndist > nextDistance * nextDistance) {
                 move = Mathf.Sign((nextPoint.position - transform.position).x);
@@ -83,7 +90,7 @@ namespace Constantine
             else if(localPoint.NeedJump(nextPoint) && canJump) {
                 move = Mathf.Sign((localPoint.position - transform.position).x);
             }
-            else if(!canJump) {
+            else if(localPoint.NeedJump(nextPoint) && !canJump) {
                 move = 0f;
             }
 
@@ -94,7 +101,7 @@ namespace Constantine
             if(!Application.isPlaying) return;
             if(PlayerInputController.Instance.Pawn == null || target == null) return;
 
-            Vector3 ptarget = target.position;
+            Vector3 ptarget = target.transform.position;
             Vector3 pos = transform.position;
 
             Gizmos.DrawCube(localPoint.position, Vector3.one * 0.2f);

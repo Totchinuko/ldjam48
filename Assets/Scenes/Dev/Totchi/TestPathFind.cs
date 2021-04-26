@@ -19,7 +19,8 @@ namespace Constantine
             NavigationPoint pPoint = nav.GetClosestPoint(PlayerInputController.Instance.Pawn.transform.position);
             NavigationPoint lPoint = nav.GetClosestPoint(transform.position);
             if(pPoint != goalNode || lPoint != localNode) {
-                Stack<NavigationPoint> sPath = nav.GetPath(lPoint, pPoint);
+                Stack<NavigationPoint> sPath = new Stack<NavigationPoint>();
+                nav.GetPath(lPoint, pPoint, sPath);
                 goalNode = pPoint;
                 localNode = lPoint;
                 path = sPath.ToList();
