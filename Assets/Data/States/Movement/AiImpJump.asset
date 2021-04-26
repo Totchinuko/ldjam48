@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc467be5a797c1241b5dacb83d74434e, type: 3}
-  m_Name: AiRedJump
+  m_Name: AiImpJump
   m_EditorClassIdentifier: 
   jumpForce: 3
   duration: 0.6
-  moveState: {fileID: 11400000, guid: e7d82535d65de644e99e80b21a14d961, type: 2}
+  moveState: {fileID: 11400000, guid: 59f4e449775c253438a9490d004f777d, type: 2}
