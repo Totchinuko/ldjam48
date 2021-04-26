@@ -8,10 +8,16 @@ namespace Constantine
     {
         public float _speed;
         public Renderer _renderer;
+        [Space]
+        public ElevatorController _elevator;
+
         private void Update()
         {
             Vector2 offset = new Vector2(0, Time.time * -_speed);
-            _renderer.material.mainTextureOffset = offset;
+            if (_elevator._isGoingDown)
+            {
+                _renderer.material.mainTextureOffset = offset;
+            }
         }
     }
 
