@@ -21,10 +21,11 @@ namespace Constantine
             return false;
         }
 
-        public void GetPoints(List<NavigationPoint> points) {
+        public void GetPoints(List<NavigationPoint> points, bool canJump = true) {
             points.Clear();
             foreach (NavigationConnection c in connections)
-                points.Add(c.destination);
+                if(!c.jump || canJump)
+                    points.Add(c.destination);
         }
 
         private void Start() {

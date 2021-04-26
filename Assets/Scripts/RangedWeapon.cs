@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 
 namespace Constantine
 {
@@ -11,20 +12,16 @@ namespace Constantine
         private Pawn pawn;
         private int shot;
 
+        public UnityEvent OnAttack;
+
         private void Awake() {
             pawn = GetComponent<Pawn>();
         }
 
-        public void Fire() {
-            Vector3 direction = pawn.animator.forward;
+        public void Fire(Vector3 direction) {
             Vector3 start = startPoint.position;
             Projectile.FireProjectile(start, direction, projectile);
-        }
-
-        public void FireDown() {
-            Vector3 direction = pawn.animator.down;
-            Vector3 start = startPoint.position;
-            Projectile.FireProjectile(start, direction, projectile);
+            OnAttack.Invoke();
         }
     }
 }
