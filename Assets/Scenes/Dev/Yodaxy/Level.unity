@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 73540791}
   - component: {fileID: 73540790}
   m_Layer: 6
-  m_Name: Elevator (1)
+  m_Name: Elevator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2436,7 +2436,7 @@ GameObject:
   - component: {fileID: 922800602}
   - component: {fileID: 922800601}
   m_Layer: 0
-  m_Name: Quad (1)
+  m_Name: BG2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2916,7 +2916,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1341130985}
   m_Layer: 0
-  m_Name: BG (1)
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3351,7 +3351,7 @@ GameObject:
   - component: {fileID: 1598094015}
   - component: {fileID: 1598094014}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: BG1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
