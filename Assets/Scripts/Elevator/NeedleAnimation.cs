@@ -18,13 +18,15 @@ public class NeedleAnimation : MonoBehaviour
 
     private void Update()
     {
-        for (int i = 0; i < _levelRotation.Length; i++)
-        {
-            _rotation.z = _levelRotation[i];
-        }
 
         if(GotToTheLowerLevel)
         {
+            for (int i = 0; i < _levelRotation.Length; i++)
+            {
+                _rotation.z = _levelRotation[i];
+                Debug.Log($"level: {i} z= {_rotation.z}");
+            }
+
             NextLevel();
         }
     }
@@ -32,6 +34,7 @@ public class NeedleAnimation : MonoBehaviour
     private void NextLevel()
     {
         _transform.DOLocalRotate(_rotation, _duration, _rotateMode);
+        Debug.Log($"Rotate Z = {_rotation.z}");
     }
 
     private Transform _transform;
