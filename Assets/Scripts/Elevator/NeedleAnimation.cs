@@ -39,7 +39,7 @@ public class NeedleAnimation : MonoBehaviour
 
     private Transform _transform;
     private bool _gotToTheLowerLevel;
-    private float _rotationZ = -76.11f;
+    //private float _rotationZ = -76.11f;
 
     private float[] _levelRotation = {-76.11f, -46.5f, -22f, 8.1f, 36.2f, 67,12f};
 
