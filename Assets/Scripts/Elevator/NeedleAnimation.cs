@@ -7,6 +7,7 @@ public class NeedleAnimation : MonoBehaviour
 {
     [SerializeField] private Vector3 _rotation;
     [SerializeField] private float _duration;
+    [SerializeField] private bool _isDown;
 
     [SerializeField] Ease _ease;
     [SerializeField] RotateMode _rotateMode;
@@ -14,6 +15,11 @@ public class NeedleAnimation : MonoBehaviour
     private void Awake()
     {
         _transform = transform;
+        _sequence = DOTween.Sequence();
+        _sequence.Append(_transform.DORotate(_rotation, _duration, _rotateMode).SetEase(_ease));
+        _sequence.SetAutoKill(false);
+        _sequence.SetLoops(-1);
+        _sequence.Pause();
     }
 
     private void Update()
@@ -21,27 +27,18 @@ public class NeedleAnimation : MonoBehaviour
 
         if(GotToTheLowerLevel)
         {
-            for (int i = 0; i < _levelRotation.Length; i++)
-            {
-                _rotation.z = _levelRotation[i];
-                Debug.Log($"level: {i} z= {_rotation.z}");
-            }
-
-            NextLevel();
+            _sequence.Play();
+        }
+        else
+        {
+            _sequence.Pause();
         }
     }
 
-    private void NextLevel()
-    {
-        _transform.DOLocalRotate(_rotation, _duration, _rotateMode);
-        Debug.Log($"Rotate Z = {_rotation.z}");
-    }
-
+    private Sequence _sequence;
     private Transform _transform;
-    private bool _gotToTheLowerLevel;
-    //private float _rotationZ = -76.11f;
 
-    private float[] _levelRotation = {-76.11f, -46.5f, -22f, 8.1f, 36.2f, 67,12f};
+    //private float[] _levelRotation = {-76.11f, -46.5f, -22f, 8.1f, 36.2f, 67,12f};
 
-    public bool GotToTheLowerLevel { get => _gotToTheLowerLevel; set => _gotToTheLowerLevel = value; }
+    public bool GotToTheLowerLevel { get => _isDown; set => _isDown = value; }
 }
