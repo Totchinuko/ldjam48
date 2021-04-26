@@ -8,6 +8,8 @@ namespace Constantine
     public class PawnAI : MonoBehaviour
     {
         [NonSerialized]
+        public int type;
+        [NonSerialized]
         public bool paused;
         public bool canJump;
         public float stoppingDistance;
