@@ -539,6 +539,7 @@ GameObject:
   - component: {fileID: 4638998618251995531}
   - component: {fileID: 4638998618251995530}
   - component: {fileID: 4638998618251995524}
+  - component: {fileID: 5116670618523902266}
   m_Layer: 10
   m_Name: Imp
   m_TagString: Untagged
@@ -735,7 +736,22 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
+--- !u!114 &5116670618523902266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4638998618251995527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7086da2b35c3cd8499643aea722dcfb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collider: {fileID: 4638998618251995534}
+  _enemyPool: {fileID: 11400000, guid: d1ea11a4ccc8623408e36f3bc93c5d8b, type: 2}
+  _pawn: {fileID: 4638998618251995529}
 --- !u!1 &4813985249583461785
 GameObject:
   m_ObjectHideFlags: 0
